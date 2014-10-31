@@ -6,7 +6,7 @@ An opinionated Wordpress Theme for your next Wordpress Project.
 
 ## Quickstart
 
-Clone this repo in your project folder
+Clone this repo in your project themes folder
 
 ```
   $ git clone git@github.com:dmodalek/Awesome-Wordpress.git .
@@ -14,7 +14,7 @@ Clone this repo in your project folder
 Install Theme Dependencies
 
 ```
-cd /public/wp-content/themes/awesome-theme
+cd public/wp-content/themes/awesome-theme;
 
 $ bower install
 $ npm install
