@@ -9,7 +9,7 @@ An opinionated Wordpress Theme for your next Wordpress Project.
 Clone this repo in your project themes folder
 
 ```
-  $ git clone git@github.com:dmodalek/Awesome-Wordpress.git .
+  $ git clone git@github.com:dmodalek/Awesome-Theme.git .
 ```
 Install Theme Dependencies
 
