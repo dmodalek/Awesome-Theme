@@ -1,0 +1,12 @@
+
+#
+# Theme
+
+/bower_components/
+/node_modules/
+built
+
+#
+# Other
+
+.DS_Store

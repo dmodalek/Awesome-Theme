@@ -1,0 +1,26 @@
+.mod-footer-links {
+
+	.col(12);
+
+
+	.nav-list-l1 {
+		.nav-list();
+	}
+
+	//
+	// @ Tablet and up
+
+	@media (min-width: @tablet-min) {
+
+		.inner {
+			float: right;
+		}
+
+			.nav-list-l1 {
+
+				> li {
+					margin-left: @spacing;
+				}
+			}
+	}
+}
