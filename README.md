@@ -28,6 +28,17 @@ Build with Grunt
   $ grunt
 ```
 
+Define APP_ENV in your wp-config.php
+
+```
+/**
+ * APP Env: dev, prod
+ */
+define('APP_ENV', 'dev');
+```
+This includes unminified assets for development. Set APP_ENV to _prod_ to include minified assets on your production server.
+
+
 ## Whats next
 
 * Search & replace all occurences of "awesome-textdomain" and "awesome-theme"
