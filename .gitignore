@@ -2,9 +2,8 @@
 #
 # Theme
 
-/bower_components/
-/node_modules/
-built
+bower_components
+node_modules
 
 #
 # Other
