@@ -13,9 +13,6 @@
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
 		<link href="//ajax.googleapis.com" rel="dns-prefetch">
 
-		<!-- Live Reload !-->
-		<? if(APP_ENV == 'dev') { echo '<script>document.write(\'<script src="http://\' + (location.host || \'localhost\').split(\':\')[0] + \':35729/livereload.js?snipver=1"></\' + \'script>\')</script>'; } ?>
-
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>

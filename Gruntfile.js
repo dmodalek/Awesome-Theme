@@ -112,7 +112,7 @@ module.exports = function (grunt) {
 					banner: '<%= banner %>'
 				},
 				files: {
-					'<%= project.built %>/styles.min.css': '<%= project.built %>/styles.css'
+					'<%= project.built %>/styles.css': '<%= project.built %>/styles.css'
 				}
 			}
 		},
@@ -151,7 +151,7 @@ module.exports = function (grunt) {
 				},
 
 				files: {
-					'<%=project.built%>/scripts.min.js': ['<%=project.scripts%>']
+					'<%=project.built%>/scripts.js': ['<%=project.scripts%>']
 				}
 			}
 		},

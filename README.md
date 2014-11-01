@@ -30,15 +30,12 @@ Build with Grunt
   $ grunt
 ```
 
-Define APP_ENV in your wp-config.php
+Build minified assets with the min option
+ 
+```
+  $ grunt min
+```
 
-```
-/**
- * APP Env: dev, prod
- */
-define('APP_ENV', 'dev');
-```
-This includes unminified assets for development. Set APP_ENV to _prod_ to include minified assets on your production server.
 
 
 ## Whats next

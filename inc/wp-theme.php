@@ -52,7 +52,7 @@ class Theme {
 		/**
 		 * APP Env
 		 */
-		if(!defined(APP_ENV)) {
+		if(!defined(APP_ENV) && strpos($_SERVER['HTTP_HOST'],'.loc') == false) {
 			define(APP_ENV, 'prod');
 		};
 
@@ -118,11 +118,8 @@ class Theme {
 		 * @see 9-wordpress.less
 		 */
 
-		if(APP_ENV == 'dev') {
-			add_editor_style(get_template_directory_uri() . '/built/styles.css');
-		} else {
-			add_editor_style(get_template_directory_uri() . '/built/styles.min.css');
-		}
+		add_editor_style(get_template_directory_uri() . '/built/styles.css');
+
 
 		/**
 		 * Register Custom Post Types
