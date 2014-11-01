@@ -37,7 +37,6 @@ Build minified assets with the min option
 ```
 
 
-
 ## Whats next
 
 * Search & replace all occurences of "awesome-textdomain" and "awesome-theme"
