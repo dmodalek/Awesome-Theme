@@ -196,6 +196,7 @@ module.exports = function (grunt) {
 		var done = this.async();
 		var bower = require('bower').commands;
 		bower.install().on('end', function(data) {
+			console.log('Setup complete. Run $ grunt to build your assets.').
 			done();
 		}).on('data', function(data) {
 			console.log(data);

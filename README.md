@@ -1,6 +1,6 @@
 # Awesome Theme
 
-An opinionated Wordpress Theme for your next Wordpress Project.
+An opinionated Wordpress Theme for your next Wordpress Project. Ready for use with Yeoman, the Wordpress Yeoman Generator.
 
 <img src="https://raw.github.com/dmodalek/awesome-wordpress/master/public/wp-content/themes/awesome-theme/screenshot.png" width="440">
 
@@ -11,14 +11,14 @@ Clone this repo in your project themes folder
 ```
   $ git clone git@github.com:dmodalek/Awesome-Theme.git .
 ```
+
 Install Theme Dependencies
 
 ```
 cd public/wp-content/themes/awesome-theme;
 
-$ bower install
 $ npm install
-$ grunt
+$ grunt setup
 
 ```
 
