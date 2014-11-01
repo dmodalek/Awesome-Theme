@@ -189,7 +189,22 @@ module.exports = function (grunt) {
 
 
 	///////////////////////////////////////////////////////////
-	
+
+	// This task is run by Yeoman automatically
+
+	grunt.registerTask('setup', function() {
+		var done = this.async();
+		var bower = require('bower').commands;
+		bower.install().on('end', function(data) {
+			done();
+		}).on('data', function(data) {
+			console.log(data);
+		}).on('error', function(err) {
+			console.error(err);
+			done();
+		});
+	});
+
 	// Default - Dev Task
 
 	grunt.registerTask('default', [
@@ -200,7 +215,7 @@ module.exports = function (grunt) {
 
 
 	// Min - Build Task
-	
+
 	grunt.registerTask('min', [
 		'styles-min',
 		'scripts-min'
