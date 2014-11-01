@@ -4,7 +4,7 @@ An opinionated Wordpress Theme for your next Wordpress Project. Ready for use wi
 
 <img src="https://raw.github.com/dmodalek/awesome-wordpress/master/public/wp-content/themes/awesome-theme/screenshot.png" width="440">
 
-## Quickstart
+## Setup
 
 Clone this repo in your project themes folder
 
@@ -18,9 +18,11 @@ Install Theme Dependencies
 cd public/wp-content/themes/awesome-theme;
 
 $ npm install
-$ grunt setup
-
+$ bower install
 ```
+
+
+## Run
 
 Build with Grunt
  
