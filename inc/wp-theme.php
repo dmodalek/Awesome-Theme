@@ -52,8 +52,12 @@ class Theme {
 		/**
 		 * APP Env
 		 */
-		if(!defined(APP_ENV) && strpos($_SERVER['HTTP_HOST'],'.loc') == false) {
-			define(APP_ENV, 'prod');
+		if(!defined(APP_ENV)) {
+			if(strpos($_SERVER['HTTP_HOST'],'.loc') == true) {
+				define(APP_ENV, 'dev');
+			} else {
+				define(APP_ENV, 'prod');
+			}
 		};
 
 		/**
