@@ -90,9 +90,7 @@ add_filter( 'body_class', 'theme_body_classes' );
 
 function theme_body_classes( $classes ) {
 
-	$classes[] = 'mod mod-layout';
-
-	if(APP_ENV == 'dev') { $classes[] = 'skin-layout-dev'; }
+	if(APP_ENV == 'dev') { $classes[] = 'layout-dev'; }
 
 	if(is_front_page()) { $classes[] = 'skin-layout-home'; }
 

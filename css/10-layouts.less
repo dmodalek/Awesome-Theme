@@ -1,4 +1,88 @@
-.skin-layout-dev {
+
+.site-wrapper {
+	.cf();
+}
+
+	.site-header {
+		background: @color-grey-light;
+		border-bottom: 1px solid @color-border;
+
+		> .inner {
+			.center();
+			.padbox();
+		}
+
+			.mod-logo {
+
+				.col(10);
+
+				@media (min-width: @tablet-med) {
+					.col(3);
+				}
+
+				@media (min-width: @desktop-min) {
+					.col(4);
+				}
+			}
+
+			.mod-main-nav {
+				
+				&.skin-main-nav-items {
+
+					@media (max-width: @mobile-max) {
+						.col(12);
+					}
+
+					@media (min-width: @tablet-min) {
+						.col(12);
+					}
+
+					@media (min-width: @tablet-med) {
+						.col(9);
+					}
+
+					@media (min-width: @desktop-min) {
+						.col(8);
+					}
+				}
+
+				&.skin-main-nav-toggle {
+
+					@media (max-width: @tablet-max) {
+						.col(2);
+					}
+				}
+			}
+	}
+
+	.site-main {
+		margin-bottom: @half-spacing;
+
+		> .inner {
+			.center();
+			.padbox();
+		}
+	}
+
+	.site-footer {
+		background: @color-grey-light;
+
+		> .inner {
+			.center();
+			.padbox();
+		}
+
+			.mod-footer-links {
+				.col(12);
+			}
+	}
+
+
+/**
+ * Dev Layout
+ */
+ 
+.layout-dev {
 	
 	@color-dev: orange;
 

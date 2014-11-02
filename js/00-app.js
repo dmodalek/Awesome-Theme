@@ -8,5 +8,6 @@
 		window.application = new Tc.Application($html);
 		application.registerModules($html);
 		application.start();
+		console.log('App started');
 	});
 })(Tc.$);

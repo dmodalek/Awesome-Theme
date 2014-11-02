@@ -1,26 +1,14 @@
 .mod-footer-links {
 
-	.col(12);
-
-
-	.nav-list-l1 {
-		.nav-list();
+	li {
+		display: inline-block;
+		margin-right: @spacing;
 	}
-
-	//
-	// @ Tablet and up
 
 	@media (min-width: @tablet-min) {
 
 		.inner {
 			float: right;
-		}
-
-			.nav-list-l1 {
-
-				> li {
-					margin-left: @spacing;
-				}
-			}
+		}	
 	}
 }

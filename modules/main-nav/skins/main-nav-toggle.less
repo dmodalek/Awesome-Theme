@@ -2,28 +2,17 @@
 
 	font-size: @h2-size;
 
-	//
-	// @ Mobile
+	.mobile-toggle {
+		line-height: @heightLogoMobile;
 
-	@media (max-width: @tablet-max) {
-
-		.col(2);
-
-		.mobile-toggle {
-			line-height: @heightLogoMobile;
-
-			&.active {
-				.icon {
-					fill: @color-hover;
-				}
+		&.active {
+			.icon {
+				fill: @color-hover;
 			}
 		}
 	}
 
-	//
-	// @ Tablet & Desktop
-
-	@media (min-width: @tablet-min) {
+	@media (min-width: @tablet-med) {
 		display: none;
 	}
 }
