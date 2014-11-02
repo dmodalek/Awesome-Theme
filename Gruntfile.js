@@ -93,7 +93,8 @@ module.exports = function (grunt) {
 		 */
 		autoprefixer: {
 			options: {
-				cascade: true
+				cascade: true,
+				map: true
 			},
 			all: {
 				src: '<%= project.built %>/styles.css',
