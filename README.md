@@ -85,3 +85,7 @@ tbd
 * .gitignore to ignore standard ignorables such as .DS_Store
 * .jshintrc file for configuring JavaScript linting
 
+
+### Deploy
+
+Run _grunt min_ to generate minified assets. Then commit everything and merge it into your _production_ branch. 
