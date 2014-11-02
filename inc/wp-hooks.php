@@ -22,21 +22,20 @@ add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
 /**
  * Removes stylesheets added by plugins
- *
- * @static
- *
  */
+
+add_action('wp_enqueue_scripts', 'remove_plugin_stylesheets', 1000);
 
 function remove_plugin_stylesheets() {
 	wp_deregister_style('contact-form-7');
 }
 
-add_action('wp_enqueue_scripts', 'remove_plugin_stylesheets', 1000);
-
 
 /**
  * Register our sidebars and widgetized areas.
  */
+
+add_action('widgets_init', 'widgets_init');
 
 function widgets_init() {
 
@@ -59,18 +58,18 @@ function widgets_init() {
 	));
 }
 
-add_action('widgets_init', 'widgets_init');
-
 
 /**
  * Remove some admin pages for authors
  */
 
+add_action( 'admin_init', 'my_remove_menu_pages' );
+
 function my_remove_menu_pages() {
 
     global $user_ID;
 
-    if ( current_user_can( 'author' ) ) {
+    if ( current_user_can('author') ) {
 		remove_menu_page('index.php'); 			// Dashboard
 		remove_menu_page('edit.php'); 			// Posts
 		remove_menu_page('upload.php'); 		// Media
@@ -79,14 +78,6 @@ function my_remove_menu_pages() {
     }
 }
 
-add_action( 'admin_init', 'my_remove_menu_pages' );
-
-/**
- * Remove Admin Toolbar for all Users
- */
-
-add_filter('show_admin_bar', '__return_false');
-
 
 /**
  * Extend the default WordPress body classes.
@@ -94,6 +85,8 @@ add_filter('show_admin_bar', '__return_false');
  * @param array $classes A list of existing body class values.
  * @return array The filtered body class list.
  */
+
+add_filter( 'body_class', 'theme_body_classes' );
 
 function theme_body_classes( $classes ) {
 
@@ -106,45 +99,6 @@ function theme_body_classes( $classes ) {
 	return $classes;
 }
 
-add_filter( 'body_class', 'theme_body_classes' );
-
-
-/**
- * Tiny MCE customisations
- *
- * @link http://www.kathyisawesome.com/506/custom-styles-for-wordpress-3-9
- *
- * @param array $opts
- * @return array
- */
-function theme_tiny_mce_before_init(array $opts) {
-
-	// Add .richtext class to tiny mce
-	$opts['body_class'] = 'richtext';
-
-	// Define Styles in Dropdown
-	$opts['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3';
-
-	// Add custom Format for Format Button, see next Function
-	$style_formats = array (
-    	array( 'title' => 'Intro Text', 'block' => 'p', 'classes' => 'intro' ),
-	);
-    $opts['style_formats'] = json_encode( $style_formats );
-    $opts['style_formats_merge'] = false;
-
-	return $opts;
-}
-
-add_filter('tiny_mce_before_init', 'theme_tiny_mce_before_init');
-
-// Add Format Button to Tiny MCE
-function theme_mce_buttons_2( $buttons ){
-    array_splice( $buttons, 1, 0, 'styleselect' );
-    return $buttons;
-}
-
-add_filter( 'mce_buttons_2', 'theme_mce_buttons_2' );
-
 
 /**
  * Create a nicely formatted and more specific title element text for output
@@ -154,6 +108,8 @@ add_filter( 'mce_buttons_2', 'theme_mce_buttons_2' );
  * @param string $sep Optional separator.
  * @return string The filtered title.
  */
+
+add_filter( 'wp_title', 'theme_wp_title', 10, 2 );
 
 function theme_wp_title( $title, $sep ) {
 	global $paged, $page;
@@ -179,18 +135,18 @@ function theme_wp_title( $title, $sep ) {
 	return $title;
 }
 
-add_filter( 'wp_title', 'theme_wp_title', 10, 2 );
-
-
 
 /**
  * Replaces content images with picturefill
  *
  * Image sizes definitions must be from large to smaller sizes, because Picturefill chooses first MQ that matches
+ * Add late priority because must be performed after html5 captions
  *
  * @param $content
  * @return mixed
  */
+
+add_filter('the_content', 'picturefill_content', 1000);
 
 function picturefill_content($content) {
 
@@ -286,9 +242,68 @@ function picturefill_content($content) {
 	return $content;
 }
 
-// replace content images with picturefill
-// - add late priority because must be performed after html5 captions
-add_filter('the_content', 'picturefill_content', 1000);
+
+/**
+ * Tiny MCE customisations
+ *
+ * @link http://www.kathyisawesome.com/506/custom-styles-for-wordpress-3-9
+ */
+
+add_filter('tiny_mce_before_init', 'theme_tiny_mce_before_init');
+
+function theme_tiny_mce_before_init(array $opts) {
+
+	// Add .richtext class to tiny mce
+	$opts['body_class'] = 'richtext';
+
+	// Define Styles in Dropdown
+	$opts['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3';
+
+	// Add custom Format for Format Button, see next Function
+	$style_formats = array (
+    	array( 'title' => 'Intro Text', 'block' => 'p', 'classes' => 'intro' ),
+	);
+    $opts['style_formats'] = json_encode( $style_formats );
+    $opts['style_formats_merge'] = false;
+
+	return $opts;
+}
+
+// Add Format Button to Tiny MCE
+
+add_filter( 'mce_buttons_2', 'theme_mce_buttons_2' );
+
+function theme_mce_buttons_2( $buttons ){
+    array_splice( $buttons, 1, 0, 'styleselect' );
+    return $buttons;
+}
+
+
+/**
+ * Remove empty <p> tags that are inserted in content
+ */
+
+add_filter('the_content', 'remove_empty_p', 20, 1);
+
+function remove_empty_p($content) {
+	$content = preg_replace(array(
+		'#<p>\s*<(div|aside|section|article|header|footer)#',
+		'#</(div|aside|section|article|header|footer)>\s*</p>#',
+		'#</(div|aside|section|article|header|footer)>\s*<br ?/?>#',
+		'#<(div|aside|section|article|header|footer)(.*?)>\s*</p>#',
+		'#<p>\s*</(div|aside|section|article|header|footer)#',
+	), array(
+		'<$1',
+		'</$1>',
+		'</$1>',
+		'<$1$2>',
+		'</$1',
+	), $content);
+
+	return preg_replace('#<p>(\s|&nbsp;)*+(<br\s*/*>)*(\s|&nbsp;)*</p>#i', '', $content);
+}
+
+
 
 
 ?>
