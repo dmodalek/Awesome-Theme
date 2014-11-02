@@ -132,6 +132,8 @@ module.exports = function (grunt) {
 
 				options: {
 					banner: '<%= banner %>',
+					preserveComments: 'all',
+					mangle: false,
 					beautify: true,
 					sourceMap: true,
 				    sourceMapName: '<%=project.built%>/scripts.js.map'
