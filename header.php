@@ -23,11 +23,13 @@
 
 			<header class="site-header" role="banner">
 				<div class="inner">
-					<?php echo module('main-nav')->template('toggle')->skin('toggle') ?>
-					<?php echo module('logo') ?>
-					<?php echo module('main-nav')->template('items')->skin('items') ?>
+					<div class="row">
+						<?php echo module('main-nav')->template('toggle')->skin('toggle') ?>
+						<?php echo module('logo') ?>
+						<?php echo module('main-nav')->template('items')->skin('items') ?>
+					</div>
 				</div>
 			</header>
 
 			<div class="site-main" role="main">
-				<div class="inner">
+				<div class="inner richtext">

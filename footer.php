@@ -3,7 +3,9 @@
 
 			<footer class="site-footer" role="contentinfo">
 				<div class="inner">
-					<?php echo module('footer-links') ?>
+					<div class="row">
+						<?php echo module('footer-links') ?>
+					</div>
 				</div>
 			</footer>
 
