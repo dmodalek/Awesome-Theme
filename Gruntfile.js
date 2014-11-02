@@ -182,8 +182,8 @@ module.exports = function (grunt) {
 				},
 				files: [
 					'Gruntfile.js',
-					'<%= project.scripts %>',
-					'<%= project.styles %>',
+					'<%= project.built %>/styles.css',
+					'<%= project.built %>/scripts.js',
 					'<%= project.markup %>',
 				]
 			}
