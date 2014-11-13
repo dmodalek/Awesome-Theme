@@ -182,19 +182,20 @@
 		addModOutline();
 	};
 
-	// Insert debug badges into page
-	addDebugBadges();
+	if($('body').hasClass('layout-dev')) {
 
-	// Click on a badge
-	onBadgeClick();
+		// Insert debug badges into page
+		addDebugBadges();
 
-	// Activate a badge on page load
-	activateBadges();
+		// Click on a badge
+		onBadgeClick();
 
-	// Resize
-	onResize();
+		// Activate a badge on page load
+		activateBadges();
 
-	///////////////////////////////////////////////////////////
+		// Resize
+		onResize();
+	}
 
 	///////////////////////////////////////////////////////////
 
