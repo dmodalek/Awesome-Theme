@@ -5,6 +5,7 @@
  *
  * - Use the Ico Moon App to bundle your icons.
  * - Download them as font or SVG and use them with HTML classes or mixins
+ * - Add the Icon Classes to this file
  *
  */
 
@@ -40,10 +41,9 @@
 }
 
 // Mixins
+// - use like this &:after { .icon-paragraph-left() }
 
 .icon-paragraph-left {
-	&:before {
-		.mixin-icon-font();
-		content: "\e601";
-	}
+	.mixin-icon-font();
+	content: "\e601";
 }
