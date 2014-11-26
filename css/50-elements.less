@@ -18,7 +18,7 @@ body {
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
-	color: @color-copy;
+	color: @c-copy;
 
 }
 
@@ -45,13 +45,13 @@ pre {
  */
 
 blockquote {
-	border-left: @spacing / 4 solid @color-grey-medium;
+	border-left: @spacing / 4 solid @c-grey-medium;
 	margin: @spacing;
 	padding: @half-spacing;
 }
 
 blockquote:before {
-	color: @color-grey-medium;
+	color: @c-grey-medium;
 	content: '”';
 	font-size: @mega-size;
 	line-height: @base-line-height / @giga-size;
@@ -72,7 +72,7 @@ blockquote p {
 hr {
 	clear: both;
 	margin-bottom: ((@spacing - 2px) / @base-font-size)*1rem;
-	border: 1px solid @color-border;
+	border: 1px solid @c-border;
 }
 
 /*
@@ -83,11 +83,11 @@ a {
 	&,
 	&:active,
 	&:focus {
-		color: @color-link;
+		color: @c-link;
 		text-decoration: none;
 	}
 	&:hover {
-		color: @color-hover;
+		color: @c-hover;
 	}
 }
 

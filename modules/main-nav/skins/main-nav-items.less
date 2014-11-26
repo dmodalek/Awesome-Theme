@@ -11,7 +11,7 @@
 
 		@media (min-width: @tablet-med) {
 			display: inline-block;
-		}			
+		}
 
 		> li {
 			display: block;
@@ -22,19 +22,19 @@
 				margin-right: @spacing;
 			}
 
-			@media (min-width: @tablet-med) {				
+			@media (min-width: @tablet-med) {
 				margin-right: @spacing;
-				line-height: @heightLogoMobile;
+				line-height: @height-logo-mobile;
 
 				&.current_page_item a,
 				&.current-menu-item a,
 				&:hover a {
-					color: @color-hover;
+					color: @c-hover;
 				}
 			}
 
 			@media (min-width: @desktop-min) {
-				line-height: @heightLogoDesktop;
+				line-height: @height-logo-desktop;
 			}
 		}
 	}
