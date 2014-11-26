@@ -1,15 +1,6 @@
 <div class="inner">
-	<ul class="nav-list-l1">
-		<li class="item">
-			<a href="#">Footer Link</a>
-		</li>
-		<li class="item">
-			<a href="#">Footer Link</a>
-		</li>
-		<li class="item">
-			<a href="#">Footer Link</a>
-		</li>
-		<li class="item">
-			<a href="#">Footer Link</a>
-		</li>
+	<? wp_nav_menu(array(
+		'theme_location' => 'footer-menu',
+		'menu_class'=> 'menu footer-menu'
+	) ); ?>
 </div>
