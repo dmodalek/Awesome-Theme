@@ -1,3 +1,5 @@
+
+
 <?php
 
 class Theme {
@@ -52,11 +54,11 @@ class Theme {
 		/**
 		 * APP Env
 		 */
-		if(!defined(APP_ENV)) {
+		if(!defined('APP_ENV')) {
 			if(strpos($_SERVER['HTTP_HOST'],'.loc') == true) {
-				define(APP_ENV, 'dev');
+				define('APP_ENV', 'dev');
 			} else {
-				define(APP_ENV, 'prod');
+				define('APP_ENV', 'prod');
 			}
 		};
 

@@ -19,6 +19,11 @@ function theme_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
+/**
+ * Hide Adminbar for all users
+ */
+
+add_filter(‘show_admin_bar’, ‘__return_false’);
 
 /**
  * Removes stylesheets added by plugins
