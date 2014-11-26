@@ -5,17 +5,17 @@
 
 .button {
 	padding: @spacing/2 @spacing;
-	color: @c-white;
+	color: @c-copy;
 	display: inline-block;
 	border-radius: 5px;
 	outline: medium none;
-	border: 1px solid @color-white;
+	border: 1px solid @c-copy;
 
 	&:hover,
 	&:active,
 	&:focus {
-		color: @c-white;
+		color: @c-copy;
 		text-decoration: none;
-		background-color: rgba(255,255,255,0.2);
+		background-color: rgba(red(@c-copy), green(@c-copy), blue(@c-copy),0.1);
 	}
 }

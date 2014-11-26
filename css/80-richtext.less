@@ -1,0 +1,63 @@
+.richtext {
+
+
+	h1, .h1, h1& {
+		margin-bottom: @spacing;
+	}
+
+	h2, .h2, h2& {
+		margin-bottom: @spacing;
+	}
+
+	h3, .h3, h3& {
+		margin-bottom: @spacing;
+
+		@media (min-width: @tablet-min) {
+			margin-bottom: @spacing * 2;
+		}
+	}
+
+	hr, blockquote, p, address,
+	table,
+	fieldset, figure,
+	pre {
+		margin-bottom: @spacing;
+	}
+
+	img {
+		.flex();
+		margin-bottom: @spacing;
+	}
+
+	/**
+	 * Lists
+	 */
+	ul, ol, dd {
+		list-style-type: inherit;
+		margin-left: @spacing;
+		margin-bottom: @spacing/2;
+	}
+
+		li {
+			padding-left: 0;
+			margin-left: 0;
+		}
+
+
+	/**
+	 * Links
+	 */
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	/**
+	 * iFrame
+	 * i.e. for YouTube videos
+	 */
+
+	iframe {
+		max-width: 100%;
+	}
+}
