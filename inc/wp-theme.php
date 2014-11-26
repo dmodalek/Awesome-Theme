@@ -79,8 +79,7 @@ class Theme {
 		 */
 		register_nav_menus( array(
 			'main-menu'   => __('Main Menu', 'awesome-textdomain'),
-			'service-menu' => __('Service Menu', 'awesome-textdomain'),
-//			'footer-menu' => __( 'Footer Menu', 'awesome-textdomain' ),
+			'footer-menu' => __( 'Footer Menu', 'awesome-textdomain' )
 		));
 
 		/**
