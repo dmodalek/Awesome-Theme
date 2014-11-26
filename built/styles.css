@@ -1428,10 +1428,10 @@ th {
  * Micro clearfix
  * - As per http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
  */
-.cf {
+.clearfix {
   clear: both;
 }
-.cf:after {
+.clearfix:after {
   content: "";
   display: table;
   clear: both;

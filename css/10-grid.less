@@ -16,7 +16,7 @@
 // Mixins
 
 .row() {
-	.cf();
+	.clearfix();
 	margin-left: -@grid-fluid-gutter/2;
 	margin-right: -@grid-fluid-gutter/2;
 	.debug-grid(row, @grid-columns);
@@ -92,7 +92,7 @@
 		}
 
 		&:after {
-			.cf();
+			.clearfix();
 			content: "_";
 			color: transparent;
 			height: 10px;
