@@ -15,7 +15,7 @@
 	&:active,
 	&:focus {
 		color: @c-copy;
-		text-decoration: none;
+		text-decoration: none !important; // if the button is inside .richtext
 		background-color: rgba(red(@c-copy), green(@c-copy), blue(@c-copy),0.1);
 	}
 }

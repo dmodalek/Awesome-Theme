@@ -180,7 +180,13 @@ function picturefill_content($content) {
 		$orig_image_id = $images[2][$i];
 		$orig_image_alt = $images[3][$i];
 		$orig_image_width = $images[4][$i];
+
+		// Get image size
+		// - return if it is not a known size i.e. when scaled by the author in the editor
 		preg_match('/size-([a-z]*)/i', $orig_image_classes, $orig_image_name_match);
+		if(isset($orig_image_name_match[1]) == false) {
+			return $content;
+		}
 		$orig_image_name = $orig_image_name_match[1];
 
 		// Helper Vars
@@ -305,8 +311,5 @@ function remove_empty_p($content) {
 
 	return preg_replace('#<p>(\s|&nbsp;)*+(<br\s*/*>)*(\s|&nbsp;)*</p>#i', '', $content);
 }
-
-
-
 
 ?>
