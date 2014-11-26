@@ -39,7 +39,7 @@ function partial($name, $options = array()) {
 		ob_start();
 
 		// Provide data for the module
-		if ($options['data'] !== null) {
+		if (isset($options['data']) && $options['data'] !== null) {
 			$data = (object) $options['data']; // assign data, convert to object
 		} else {
 			$data = (object) array(); // empty object
