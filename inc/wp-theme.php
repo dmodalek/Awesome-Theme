@@ -130,7 +130,14 @@ class Theme {
 		 * Register Custom Post Types
 		 */
 
-//		new Theme\PostType\Example();
+		// new Theme\PostType\Example();
+
+
+		/**
+		 * Register Custom Taxonomy
+		 */
+
+		// new Theme\Taxonomy\Example();
 
 	}
 
