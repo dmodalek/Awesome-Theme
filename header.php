@@ -32,4 +32,4 @@
 			</header>
 
 			<div class="site-main" role="main">
-				<div class="inner richtext">
+				<div class="inner">

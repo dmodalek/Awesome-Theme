@@ -1,7 +1,8 @@
 <? get_header(); ?>
 
-<h1>Frontpage Template</h1>
+<h1 class="richtext">Frontpage Template</h1>
 
+<section class="richtext">
 <?php
 	// Start the Loop.
 	while ( have_posts() ) : the_post(); ?>
@@ -20,8 +21,9 @@
 <?
 	endwhile;
 ?>
+</section>
 
-<?= module('example') ?>
+<?= module('example')->attrib('class', 'richtext') ?>
 
 <? get_sidebar(); ?>
 
