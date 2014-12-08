@@ -1,4 +1,41 @@
 
+///////////////////////////////////////////////////////////
+// Layout
+///////////////////////////////////////////////////////////
+
+/**
+ * Layout Utility Classes
+ */
+
+// Center a container using max width and padding
+
+.center {
+	margin: 0 auto;
+	max-width: @grid-fixed-width;
+}
+
+
+// Add padding
+
+.pad {
+	padding-left: @spacing;
+	padding-right: @spacing;
+}
+
+.padbox {
+	.pad();
+	padding-top: @spacing/2;
+	padding-bottom: @spacing/2;
+}
+
+
+///////////////////////////////////////////////////////////
+
+
+/**
+ * Layout
+ */
+
 .site-wrapper {
 	.clearfix();
 }

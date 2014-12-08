@@ -366,6 +366,9 @@ th {
  * - set to whatever you want: @grid-fluid-gutter:, @base-line-height, fixed value
  */
 /*
+ * Alpha Vslaues
+ */
+/*
  * Project
  */
 /**
@@ -1039,20 +1042,6 @@ h4,
   background: rgba(102, 102, 102, 0.2);
 }
 /**
- * Center a container using max width and padding
- */
-.center {
-  margin: 0 auto;
-  max-width: 1140px;
-}
-/**
- * Add left and right padding
- */
-.pad {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-/**
  * Sets a max-width for text
  */
 .reading-length {
@@ -1150,6 +1139,26 @@ h4,
 /**
  * truncate
  * - Truncate overly long text with ...
+ */
+/**
+ * Layout Utility Classes
+ */
+.center {
+  margin: 0 auto;
+  max-width: 1140px;
+}
+.pad {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.padbox {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/**
+ * Layout
  */
 .site-wrapper {
   clear: both;
@@ -1968,6 +1977,9 @@ h3.richtext {
 .richtext .mceTemp + ol {
   list-style-position: inside;
 }
+/*
+ * Project specific styles
+ */
 .mod-example .debug-grid {
   margin-bottom: 20px;
 }
