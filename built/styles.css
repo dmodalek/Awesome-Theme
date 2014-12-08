@@ -1859,6 +1859,9 @@ video {
   text-decoration: none !important;
   background-color: rgba(102, 102, 102, 0.1);
 }
+html .mceContentBody {
+  padding: 20px !important;
+}
 .richtext {
   /**
 	 * Lists
@@ -1870,6 +1873,9 @@ video {
 	 * iFrame
 	 * i.e. for YouTube videos
 	 */
+  /*
+	 * Styling for Wordpress specific classes (Frontend and Backend)
+	 */
 }
 .richtext h1,
 .richtext .h1,
@@ -1880,6 +1886,13 @@ h1.richtext {
 .richtext .h2,
 h2.richtext {
   margin-bottom: 20px;
+}
+@media (min-width: 668px) {
+  .richtext h2,
+  .richtext .h2,
+  h2.richtext {
+    margin-bottom: 40px;
+  }
 }
 .richtext h3,
 .richtext .h3,
@@ -1928,44 +1941,31 @@ h3.richtext {
 .richtext iframe {
   max-width: 100%;
 }
-/*
- * Wordpress Editor Styles
- *
- */
-/*
- * Overwrite Styles for the Tiny MCE Editor (Backend)
- */
-html .mceContentBody {
-  padding: 20px !important;
-}
-/*
- * Styling for Wordpress specific classes (Frontend and Backend)
- */
-.alignleft {
+.richtext .alignleft {
   float: left;
   margin: 0 20px 0 0;
 }
-.alignright {
+.richtext .alignright {
   float: right;
   margin: 0 0 0 20px;
 }
-.aligncenter {
+.richtext .aligncenter {
   display: block;
   margin: 5px auto;
 }
-img.alignnone {
+.richtext img.alignnone {
   margin: 5px 0;
 }
-.wp-caption {
+.richtext .wp-caption {
   width: auto !important;
 }
-.wp-caption-text {
+.richtext .wp-caption-text {
   font-size: 14px;
   line-height: 24.5px;
   margin-bottom: 20px;
 }
-.mceTemp + ul,
-.mceTemp + ol {
+.richtext .mceTemp + ul,
+.richtext .mceTemp + ol {
   list-style-position: inside;
 }
 .mod-example .debug-grid {
