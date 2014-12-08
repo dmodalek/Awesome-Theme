@@ -17,7 +17,7 @@ function theme_scripts() {
 	wp_enqueue_script('theme');
 }
 
-add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+add_action('wp_enqueue_scripts', 'theme_scripts');
 
 /**
  * Hide Adminbar for all users
@@ -45,15 +45,6 @@ add_action('widgets_init', 'widgets_init');
 function widgets_init() {
 
 	register_sidebar( array(
-		'name' => 'Promo Homepage',
-		'id' => 'promo-homepage',
-		'before_widget' => '<div>',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="title">',
-		'after_title' => '</h3>',
-	));
-
-	register_sidebar( array(
 		'name' => 'Footer',
 		'id' => 'footer',
 		'before_widget' => '<div>',
@@ -68,7 +59,7 @@ function widgets_init() {
  * Remove some admin pages for authors
  */
 
-add_action( 'admin_init', 'my_remove_menu_pages' );
+add_action('admin_init', 'my_remove_menu_pages');
 
 function my_remove_menu_pages() {
 
@@ -91,7 +82,7 @@ function my_remove_menu_pages() {
  * @return array The filtered body class list.
  */
 
-add_filter( 'body_class', 'theme_body_classes' );
+add_filter('body_class', 'theme_body_classes');
 
 function theme_body_classes( $classes ) {
 
@@ -112,7 +103,7 @@ function theme_body_classes( $classes ) {
  * @return string The filtered title.
  */
 
-add_filter( 'wp_title', 'theme_wp_title', 10, 2 );
+add_filter('wp_title', 'theme_wp_title', 10, 2);
 
 function theme_wp_title( $title, $sep ) {
 	global $paged, $page;
@@ -167,7 +158,7 @@ function theme_tiny_mce_before_init(array $opts) {
 
 // Add Format Button to Tiny MCE
 
-add_filter( 'mce_buttons_2', 'theme_mce_buttons_2' );
+add_filter('mce_buttons_2', 'theme_mce_buttons_2');
 
 function theme_mce_buttons_2( $buttons ){
     array_splice( $buttons, 1, 0, 'styleselect' );
