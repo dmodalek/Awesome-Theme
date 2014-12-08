@@ -1511,44 +1511,57 @@ h4,
   max-width: 1140px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 20px;
 }
-.site-footer .mod-footer-links {
+.site-footer .col-left,
+.site-footer .col-right {
   margin-left: 2.63157895%;
   margin-right: 2.63157895%;
   float: left;
-  width: 94.73684211%;
+  width: 44.73684211%;
 }
-.debug-grid .site-footer .mod-footer-links:before,
-.debug-grid .site-footer .mod-footer-links:after {
+.debug-grid .site-footer .col-left:before,
+.debug-grid .site-footer .col-right:before,
+.debug-grid .site-footer .col-left:after,
+.debug-grid .site-footer .col-right:after {
   display: block !important;
   text-align: center;
   color: grey;
   font-size: 12px;
 }
-.debug-grid .site-footer .mod-footer-links:before {
-  content: 'col-12' !important;
+.debug-grid .site-footer .col-left:before,
+.debug-grid .site-footer .col-right:before {
+  content: 'col-6' !important;
 }
-.debug-grid .site-footer .mod-footer-links:after {
+.debug-grid .site-footer .col-left:after,
+.debug-grid .site-footer .col-right:after {
   clear: both;
   content: "_";
   color: transparent;
   height: 10px;
 }
-.debug-grid .site-footer .mod-footer-links:after:after {
+.debug-grid .site-footer .col-left:after:after,
+.debug-grid .site-footer .col-right:after:after {
   content: "";
   display: table;
   clear: both;
 }
-.debug-grid .site-footer .mod-footer-links:before {
+.debug-grid .site-footer .col-left:before,
+.debug-grid .site-footer .col-right:before {
   margin: 10px 0 10px 0;
   padding: 10px 30;
   border-left: 1px solid grey;
   border-right: 1px solid grey;
 }
-.debug-grid .site-footer .mod-footer-links:before,
-.debug-grid .site-footer .mod-footer-links:after {
+.debug-grid .site-footer .col-left:before,
+.debug-grid .site-footer .col-right:before,
+.debug-grid .site-footer .col-left:after,
+.debug-grid .site-footer .col-right:after {
   margin: 10px 0 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
+}
+.site-footer .col-right {
+  text-align: right;
 }
 /**
  * Dev Layout
@@ -1977,7 +1990,7 @@ img.alignnone {
 }
 .mod-footer-links li {
   display: inline-block;
-  margin-right: 20px;
+  margin-left: 20px;
 }
 @media (min-width: 668px) {
   .mod-footer-links .inner {
@@ -2008,6 +2021,9 @@ img.alignnone {
   }
 }
 .mod-search-results article {
+  margin-bottom: 20px;
+}
+.mod-search {
   margin-bottom: 20px;
 }
 .skin-example-woot .text {
