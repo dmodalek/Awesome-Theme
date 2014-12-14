@@ -8,7 +8,7 @@
 
 		var $ctx = $('body'),
 			$badgeContainer = $('<div class="awesome-debug"></div>'),
-			badgeNames = ['Grid', 'Mod', 'VA'];
+			badgeNames = ['Grid', 'Mod'];
 
 		$ctx.prepend($badgeContainer);
 

@@ -359,7 +359,7 @@ th {
  */
 /*
  * Mediaqueries
- * use: @media (min-width: @desktop-min)
+ * use: @media @m-large-up { ... }
  */
 /*
  * Spacing
@@ -982,55 +982,143 @@ th {
 /**
  * Fonts Families
  */
-/**
- * Font-sizes
- */
 /*
  * Definitions
+ *
+ * used in richext.less
+ * or use in other files with &:extend(.copy all)
+ *
+ * 1rem equals 16px
+ * - for easier calculation set font-size: 62.5% on the html tag
+ * - 1 rem then equals 10px
  */
 .giga {
-  font-size: 5rem;
-  line-height: 8.75rem;
-}
-.mega {
   font-size: 4rem;
-  line-height: 7rem;
+  line-height: 5rem;
+}
+@media (min-width: 668px) {
+  .giga {
+    font-size: 4.2rem;
+    line-height: 5.2rem;
+  }
+}
+.mega,
+blockquote:before {
+  font-size: 3rem;
+  line-height: 4rem;
+}
+@media (min-width: 668px) {
+  .mega,
+  blockquote:before {
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+  }
 }
 h1,
 .h1 {
-  font-size: 32px;
-  line-height: 56px;
+  font-size: 2rem;
+  line-height: 3rem;
   font-weight: normal;
+}
+@media (min-width: 668px) {
+  h1,
+  .h1 {
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+  }
 }
 h2,
 .h2 {
-  font-size: 26px;
-  line-height: 45.5px;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
   font-weight: normal;
+}
+@media (min-width: 668px) {
+  h2,
+  .h2 {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+  }
 }
 h3,
 .h3 {
-  font-size: 20px;
-  line-height: 35px;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
   font-weight: normal;
+}
+@media (min-width: 668px) {
+  h3,
+  .h3 {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
 }
 h4,
 .h4 {
-  font-size: 18px;
-  line-height: 31.5px;
+  font-size: 1.2rem;
+  line-height: 2.2rem;
   font-weight: normal;
 }
-.copy {
-  font-size: 16px;
-  line-height: 28px;
+@media (min-width: 668px) {
+  h4,
+  .h4 {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
 }
-.small {
-  font-size: 14px;
-  line-height: 24.5px;
+.copy,
+body {
+  font-size: 1rem;
+  line-height: 1.8rem;
+}
+@media (min-width: 668px) {
+  .copy,
+  body {
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
+}
+.small,
+.layout-dev .badge,
+.layout-dev .viewport-info {
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+@media (min-width: 668px) {
+  .small,
+  .layout-dev .badge,
+  .layout-dev .viewport-info {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
 }
 .micro {
-  font-size: 10px;
-  line-height: 17.5px;
+  font-size: 0.6rem;
+  line-height: 0.8rem;
+}
+@media (min-width: 668px) {
+  .micro {
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
+}
+.icon,
+.mixin-icon-font,
+[class^="icon-"],
+[class*=" icon-"],
+.icon-paragraph-left {
+  font-size: 1.4rem;
+  line-height: 3.7rem;
+}
+@media (min-width: 668px) {
+  .icon,
+  .mixin-icon-font,
+  [class^="icon-"],
+  [class*=" icon-"],
+  .icon-paragraph-left {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
 }
 /*
  * Selected Text Styling
@@ -1575,11 +1663,6 @@ h4,
 /**
  * Dev Layout
  */
-.layout-dev {
-  /*
-	 * Debug Vertical Rythm
-	 */
-}
 .layout-dev .awesome-debug {
   position: fixed;
   bottom: 1rem;
@@ -1587,8 +1670,6 @@ h4,
   z-index: 1000;
 }
 .layout-dev .badge {
-  font-size: 14px;
-  line-height: 24.5px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -1607,8 +1688,6 @@ h4,
   background: #ffa500;
 }
 .layout-dev .viewport-info {
-  font-size: 14px;
-  line-height: 24.5px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -1633,8 +1712,8 @@ h4,
   }
 }
 .layout-dev .terrific-module {
-  font-size: 14px;
-  line-height: 24.5px;
+  font-size: 0.8rem;
+  line-height: 1rem;
   position: absolute;
   display: block;
   pointer-events: none;
@@ -1644,10 +1723,11 @@ h4,
   background-color: rgba(255, 165, 0, 0.6);
   z-index: 9999;
 }
-.layout-dev.debug-va {
-  background: -webkit-linear-gradient(90deg, #ffffff, #ffffff 95%, #efefef 95%, #efefef);
-  background: linear-gradient(0deg, #ffffff, #ffffff 95%, #efefef 95%, #efefef);
-  background-size: auto 28px;
+@media (min-width: 668px) {
+  .layout-dev .terrific-module {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
 }
 /**
  * Icon Moon
@@ -1674,7 +1754,6 @@ h4,
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1688,7 +1767,6 @@ h4,
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e601";
@@ -1701,11 +1779,8 @@ h4,
 }
 html {
   overflow-y: scroll;
-  font-size: 62.5%;
 }
 body {
-  font-size: 16px;
-  line-height: 28px;
   font-family: 'Varela Round', sans-serif;
   padding: 0;
   margin: 0;
@@ -1763,8 +1838,6 @@ blockquote {
 blockquote:before {
   color: #dddddd;
   content: '”';
-  font-size: 4rem;
-  line-height: 5.6px;
   margin-right: 10px;
   vertical-align: -0.5em;
 }
@@ -1777,7 +1850,7 @@ blockquote p {
  */
 hr {
   clear: both;
-  margin-bottom: 1.125rem;
+  margin-bottom: 1rem;
   border: 1px solid #dddddd;
 }
 /*
@@ -1796,8 +1869,14 @@ a:hover {
  * Small
  */
 small {
-  font-size: 14px;
-  line-height: 24.5px;
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+@media (min-width: 668px) {
+  small {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
 }
 /*
  * Lists
@@ -1806,6 +1885,7 @@ ul,
 ol,
 dd {
   list-style-type: none;
+  padding-left: 0;
 }
 /*
  * Forms
@@ -1813,6 +1893,9 @@ dd {
 form input[type="checkbox"],
 form input[type="radio"] {
   margin-right: 10px;
+}
+form input[type="search"] {
+  box-sizing: border-box;
 }
 form input,
 form button,
@@ -1841,6 +1924,12 @@ form label[for] {
     float: left;
     width: 140px;
   }
+}
+/**
+ * iFrame
+ */
+iframe {
+  display: block;
 }
 /*
  * Remove the gap between images, videos, audio and canvas and the bottom of
@@ -1915,6 +2004,11 @@ h3.richtext {
     margin-bottom: 40px;
   }
 }
+.richtext h4,
+.richtext .h4,
+h4.richtext {
+  margin-bottom: 20px;
+}
 .richtext hr,
 .richtext blockquote,
 .richtext p,
@@ -1938,7 +2032,7 @@ h3.richtext {
 .richtext dd {
   list-style-type: inherit;
   margin-left: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .richtext li {
   padding-left: 0;
@@ -1969,9 +2063,15 @@ h3.richtext {
   width: auto !important;
 }
 .richtext .wp-caption-text {
-  font-size: 14px;
-  line-height: 24.5px;
+  font-size: 0.8rem;
+  line-height: 1rem;
   margin-bottom: 20px;
+}
+@media (min-width: 668px) {
+  .richtext .wp-caption-text {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
 }
 .richtext .mceTemp + ul,
 .richtext .mceTemp + ol {
@@ -1980,6 +2080,52 @@ h3.richtext {
 /*
  * Project specific styles
  */
+/*
+ * Wordpress Editor Styles
+ *
+ */
+/*
+ * Overwrite Styles for the Tiny MCE Editor (Backend)
+ */
+html .mceContentBody {
+  padding: 20px !important;
+}
+/*
+ * Styling for Wordpress specific classes (Frontend and Backend)
+ */
+.alignleft {
+  float: left;
+  margin: 0 20px 0 0;
+}
+.alignright {
+  float: right;
+  margin: 0 0 0 20px;
+}
+.aligncenter {
+  display: block;
+  margin: 5px auto;
+}
+img.alignnone {
+  margin: 5px 0;
+}
+.wp-caption {
+  width: auto !important;
+}
+.wp-caption-text {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  margin-bottom: 20px;
+}
+@media (min-width: 668px) {
+  .wp-caption-text {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+}
+.mceTemp + ul,
+.mceTemp + ol {
+  list-style-position: inside;
+}
 .mod-example .debug-grid {
   margin-bottom: 20px;
 }
@@ -2045,6 +2191,7 @@ h3.richtext {
   clear: both;
   width: 100%;
   display: none;
+  padding-left: 0;
 }
 .skin-main-nav-items .nav-list-l1:after {
   content: "";
@@ -2052,9 +2199,15 @@ h3.richtext {
   clear: both;
 }
 .skin-main-nav-items .nav-list-l1 a {
-  font-size: 20px;
-  line-height: 35px;
+  font-size: 1.2rem;
+  line-height: 2.2rem;
   font-weight: normal;
+}
+@media (min-width: 668px) {
+  .skin-main-nav-items .nav-list-l1 a {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
 }
 @media (min-width: 846px) {
   .skin-main-nav-items .nav-list-l1 {
@@ -2087,13 +2240,11 @@ h3.richtext {
     line-height: 90px;
   }
 }
-.skin-main-nav-toggle {
-  font-size: 26px;
-}
-.skin-main-nav-toggle .mobile-toggle {
-  line-height: 60px;
-}
-.skin-main-nav-toggle .mobile-toggle.active .icon {
+.skin-main-nav-toggle .mobile-toggle.active .icon,
+.skin-main-nav-toggle .mobile-toggle.active .mixin-icon-font,
+.skin-main-nav-toggle .mobile-toggle.active [class^="icon-"],
+.skin-main-nav-toggle .mobile-toggle.active [class*=" icon-"],
+.skin-main-nav-toggle .mobile-toggle.active .icon-paragraph-left {
   fill: #f08921;
 }
 @media (min-width: 846px) {

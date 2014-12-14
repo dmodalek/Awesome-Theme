@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 08.12.2014 at 19:34:07
+ * Generated with Grunt on 14.12.2014 at 12:51:10
  */
 
 /*!
@@ -5956,7 +5956,7 @@ function($) {
  */
 function() {
     var addDebugBadges = function() {
-        var $ctx = $("body"), $badgeContainer = $('<div class="awesome-debug"></div>'), badgeNames = [ "Grid", "Mod", "VA" ];
+        var $ctx = $("body"), $badgeContainer = $('<div class="awesome-debug"></div>'), badgeNames = [ "Grid", "Mod" ];
         $ctx.prepend($badgeContainer), $.each(badgeNames, function(index, element) {
             var $badge = $('<a href="#' + element.toLowerCase() + '" class="badge badge-' + element.toLowerCase() + '">' + element + "</a>");
             $badgeContainer.append($badge);

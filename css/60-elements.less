@@ -13,12 +13,10 @@
 
 html {
 	overflow-y: scroll;
-	font-size: 62.5%;
 }
 
 body {
-	font-size: @base-font-size;
-	line-height: @base-line-height;
+	&:extend(.copy all);
 	font-family: @font-default;
 	padding: 0;
 	margin: 0;
@@ -59,10 +57,9 @@ blockquote {
 }
 
 blockquote:before {
+	&:extend(.mega all);
 	color: @c-grey-medium;
 	content: '”';
-	font-size: @mega-size;
-	line-height: @base-line-height / @giga-size;
 	margin-right: @spacing/2;
 	vertical-align: -0.5em;
 }
@@ -79,7 +76,7 @@ blockquote p {
 
 hr {
 	clear: both;
-	margin-bottom: ((@spacing - 2px) / @base-font-size)*1rem;
+	margin-bottom: 1rem;
 	border: 1px solid @c-border;
 }
 
@@ -115,6 +112,7 @@ small {
 
 ul, ol, dd {
 	list-style-type: none;
+	padding-left: 0;
 }
 
 
@@ -128,6 +126,10 @@ form {
 	input[type="checkbox"],
 	input[type="radio"] {
 		margin-right: @spacing / 2;
+	}
+
+	input[type="search"] {
+		box-sizing: border-box; // overwrite normalize
 	}
 
 	input, button, textarea {
@@ -157,6 +159,13 @@ form {
 	}
 }
 
+/**
+ * iFrame
+ */
+
+iframe {
+	display: block; // prevent white space below iframe
+}
 
 /*
  * Remove the gap between images, videos, audio and canvas and the bottom of
