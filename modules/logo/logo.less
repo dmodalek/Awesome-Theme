@@ -1,22 +1,26 @@
 .mod-logo {
 
-	.inner {
-		text-align: right;
+	.col(10);
 
-		@media (min-width: @tablet-med) {
-			text-align: left;
-		}
+	@media @m-large-up {
+		.col(4);
+	}
+
+	text-align: right;
+
+	@media @m-large-up {
+		text-align: left;
 	}
 
 		.logo {
 			width: 200px;
 			height: @height-logo-mobile;
 
-			@media (min-width: @tablet-med) {
+			@media @m-large-up {
 				margin: @spacing/2 0;
 			}
 
-			@media (min-width: @desktop-min) {
+			@media @m-x-large-up {
 				width: 300px;
 				height: @height-logo-desktop;
 			}

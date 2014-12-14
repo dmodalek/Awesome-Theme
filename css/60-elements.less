@@ -52,8 +52,9 @@ pre {
 
 blockquote {
 	border-left: @spacing / 4 solid @c-grey-medium;
-	margin: @spacing;
-	padding: @spacing/2;
+	margin-left: 0;
+	margin-bottom: @spacing;
+	padding-left: @spacing;
 }
 
 blockquote:before {
@@ -140,6 +141,11 @@ form {
 		line-height: 30px;
 		padding: 0 @spacing/2;
 		max-width: 300px;
+		margin-bottom: @spacing;
+	}
+
+	input, textarea {
+		max-width: 100%; // overwrite html cols values
 	}
 
 	select {
@@ -152,7 +158,7 @@ form {
 		cursor: pointer;
 		line-height: 30px;
 
-		@media (min-width: @tablet-min) {
+		@media @m-medium-up {
 			float: left;
 			width: 140px;
 		}

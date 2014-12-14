@@ -1,7 +1,13 @@
 .skin-main-nav-toggle {
 
-	.mobile-toggle {
+	&:extend(.h2 all);
+	padding-top: @spacing/2;
 
+	@media @m-large-down {
+		.col(2);
+	}
+
+	.mobile-toggle {
 		&.active {
 			.icon {
 				fill: @c-hover;
@@ -9,7 +15,7 @@
 		}
 	}
 
-	@media (min-width: @tablet-med) {
+	@media @m-large-up {
 		display: none;
 	}
 }

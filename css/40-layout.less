@@ -17,15 +17,21 @@
 
 // Add padding
 
-.pad {
+.inner {
+	&:extend(.center all);
 	padding-left: @spacing;
 	padding-right: @spacing;
 }
 
-.padbox {
-	.pad();
-	padding-top: @spacing/2;
-	padding-bottom: @spacing/2;
+
+// Margin below sections
+
+.section {
+	padding-bottom: @spacing;
+
+	@media @m-medium-up {
+		padding-bottom: @spacing * 3;
+	}
 }
 
 
@@ -45,70 +51,18 @@
 		background: @c-grey-light;
 		border-bottom: 1px solid @c-border;
 		margin-bottom: @spacing;
-
-		> .inner {
-			.center();
-			.pad();
-		}
-
-			.mod-logo {
-
-				.col(10);
-
-				@media (min-width: @tablet-med) {
-					.col(3);
-				}
-
-				@media (min-width: @desktop-min) {
-					.col(4);
-				}
-			}
-
-			.mod-main-nav {
-
-				&.skin-main-nav-items {
-
-					@media (max-width: @mobile-max) {
-						.col(12);
-					}
-
-					@media (min-width: @tablet-min) {
-						.col(12);
-					}
-
-					@media (min-width: @tablet-med) {
-						.col(9);
-					}
-
-					@media (min-width: @desktop-min) {
-						.col(8);
-					}
-				}
-
-				&.skin-main-nav-toggle {
-
-					@media (max-width: @tablet-max) {
-						.col(2);
-					}
-				}
-			}
 	}
 
 	.site-main {
+		.clearfix();
 		margin-bottom: @spacing/2;
-
-		> .inner {
-			.center();
-			.pad();
-		}
 	}
 
 	.site-footer {
+		.clearfix();
 		background: @c-grey-light;
 
 		> .inner {
-			.center();
-			.pad();
 			padding-top: @spacing;
 		}
 
@@ -170,10 +124,10 @@
 			&:after {
 				content: ' Mobile';
 
-				@media (min-width: @tablet-min) {
+				@media @m-medium-up {
 					content: ' Tablet'
 				}
-				@media (min-width: @desktop-min) {
+				@media @m-x-large-up {
 					content: ' Desktop'
 				}
 			}

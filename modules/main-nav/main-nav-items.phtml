@@ -1,16 +1,13 @@
+<ul class="nav-list-l1">
+	<?
+		$args = array(
+			'theme_location' => 'main-menu',
+			'container' => false,
+			'items_wrap'=>'%3$s', // removes the <ul>
+			'fallback_cb' => false
+		);
 
-<div class="inner">
-	<ul class="nav-list-l1">
-		<?
-			$args = array(	
-				'theme_location' => 'main-menu',
-				'container' => false,
-				'items_wrap'=>'%3$s', // removes the <ul>
-				'fallback_cb' => false
-			);
-
-			wp_nav_menu($args);
-		?>
-		<?= module('search')->tag('li') ?>
-	</ul>
-</div>
+		wp_nav_menu($args);
+	?>
+	<?= module('search')->tag('li') ?>
+</ul>

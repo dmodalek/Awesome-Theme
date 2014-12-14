@@ -3,16 +3,6 @@
 // Richtext
 ///////////////////////////////////////////////////////////
 
-//
-// Overwrite Styles for the Tiny MCE Editor (Backend)
-
-html .mceContentBody {
-	padding: @spacing !important; // another wp class tries to override this
-}
-
-//
-// Richtext
-
 .richtext {
 
 	h1, .h1, h1& {
@@ -22,7 +12,7 @@ html .mceContentBody {
 	h2, .h2, h2& {
 		margin-bottom: @spacing;
 
-		@media (min-width: @tablet-min) {
+		@media @m-medium-up {
 			margin-bottom: @spacing * 2;
 		}
 	}
@@ -30,7 +20,7 @@ html .mceContentBody {
 	h3, .h3, h3& {
 		margin-bottom: @spacing;
 
-		@media (min-width: @tablet-min) {
+		@media @m-medium-up {
 			margin-bottom: @spacing * 2;
 		}
 	}
@@ -48,6 +38,9 @@ html .mceContentBody {
 
 	img {
 		.flex();
+	}
+
+	> img {
 		margin-bottom: @spacing;
 	}
 
@@ -74,6 +67,7 @@ html .mceContentBody {
 		text-decoration: underline;
 	}
 
+
 	/**
 	 * iFrame
 	 * i.e. for YouTube videos
@@ -83,27 +77,28 @@ html .mceContentBody {
 		max-width: 100%;
 	}
 
+
 	/*
 	 * Styling for Wordpress specific classes (Frontend and Backend)
 	 */
 
+	html .mceContentBody {
+		padding: @spacing !important; // another wp class tries to override this
+	}
+
 	.alignleft {
 		float: left;
-		margin: 0 @spacing 0 0;
+		margin-right: @spacing;
 	}
 
 	.alignright {
 		float: right;
-		margin: 0 0 0 @spacing;
+		margin-left: @spacing;
 	}
 
 	.aligncenter {
 		display: block;
 		margin: 5px auto;
-	}
-
-	img.alignnone {
-		margin: 5px 0;
 	}
 
 	.wp-caption {
