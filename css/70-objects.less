@@ -20,3 +20,18 @@
 		background-color: rgba(red(@c-copy), green(@c-copy), blue(@c-copy),0.1);
 	}
 }
+
+.anchor {
+	position: absolute;
+	margin-top: -100px;
+}
+
+.section-title {
+	margin-top: @spacing*2;
+	margin-bottom: @spacing;
+
+	@media (min-width: @m-medium-up) {
+		margin-top: @spacing * 3;
+		margin-bottom: @spacing * 2;
+	}
+}

@@ -1,0 +1,67 @@
+
+///////////////////////////////////////////////////////////
+// WordPress
+///////////////////////////////////////////////////////////
+
+ //
+ // Overwrite Styles for the Tiny MCE Editor (Backend)
+
+ html .mceContentBody {
+ 	padding: @spacing !important; // another wp class tries to override this
+ }
+
+ //
+ // Styling for Wordpress specific classes (Frontend and Backend)
+
+ .alignleft {
+ 	float: left;
+ 	margin-right: @spacing;
+ }
+
+ .alignright {
+ 	float: right;
+ 	margin-left: @spacing;
+ }
+
+ .aligncenter {
+ 	display: block;
+ 	margin: 5px auto;
+ }
+
+ .wp-caption {
+ 	width: auto !important; // Remove WP width
+ }
+
+ .wp-caption-text {
+ 	.small();
+ 	margin-bottom: @spacing;
+ }
+
+ .mceTemp + ul,
+ .mceTemp + ol  {
+ 	list-style-position: inside;
+ }
+
+ //
+ // Contact Form 7
+
+span.wpcf7-not-valid-tip {
+	color: @c-failure;
+}
+
+.wpcf7-validation-errors {
+	display: none;
+}
+
+div.wpcf7-mail-sent-ok {
+	color: @c-success;
+	border: none;
+	margin-top: @spacing * 2;
+	margin-left: 0;
+	margin-right: 0;
+	padding: @spacing/4 @spacing/2;
+}
+
+.wpcf7-form {
+	&:extend(.section all);
+}

@@ -27,10 +27,18 @@
 // Margin below sections
 
 .section {
-	padding-bottom: @spacing;
+	margin-bottom: @spacing;
 
-	@media @m-medium-up {
-		padding-bottom: @spacing * 3;
+	@media (min-width: @m-medium-up) {
+		margin-bottom: @spacing * 3;
+	}
+}
+
+.mini-section {
+	margin-bottom: @spacing/2;
+
+	@media (min-width: @m-medium-up) {
+		margin-bottom: @spacing;
 	}
 }
 
