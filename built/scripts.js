@@ -1,6 +1,6 @@
 
 /*
- * Generated with Grunt on 14.12.2014 at 12:51:10
+ * Generated with Grunt on 29.04.2015 at 18:14:20
  */
 
 /*!
@@ -5894,55 +5894,7 @@ function() {
             });
         }
     };
-}.call(this), /*! Picturefill - Responsive Images that work today. (and mimic the proposed Picture element with span elements). Author: Scott Jehl, Filament Group, 2012 | License: MIT/GPLv2 */
-function(w) {
-    // Enable strict mode
-    "use strict";
-    w.picturefill = function() {
-        // Loop the pictures
-        for (var ps = w.document.getElementsByTagName("span"), i = 0, il = ps.length; il > i; i++) if (null !== ps[i].getAttribute("data-picture")) {
-            // See if which sources match
-            for (var sources = ps[i].getElementsByTagName("span"), matches = [], j = 0, jl = sources.length; jl > j; j++) {
-                var media = sources[j].getAttribute("data-media");
-                // if there's no media specified, OR w.matchMedia is supported
-                (!media || w.matchMedia && w.matchMedia(media).matches) && matches.push(sources[j]);
-            }
-            // Find any existing img element in the picture element
-            var picImg = ps[i].getElementsByTagName("img")[0];
-            if (matches.length) {
-                var matchedEl = matches.pop();
-                if (picImg && "NOSCRIPT" !== picImg.parentNode.nodeName) {
-                    if (matchedEl === picImg.parentNode) // Skip further actions if the correct image is already in place
-                    continue;
-                } else {
-                    picImg = w.document.createElement("img");
-                    var alt = ps[i].getAttribute("data-alt");
-                    null !== alt && (picImg.alt = alt);
-                    /**
-						 * Customisation
-						 *
-						 * Added Attributes to the <img> tag
- 						 */
-                    var width = ps[i].getAttribute("data-width");
-                    null !== width && (picImg.width = width);
-                    var classes = ps[i].getAttribute("data-class");
-                    null !== classes && (picImg.className = classes);
-                }
-                picImg.src = matchedEl.getAttribute("data-src"), matchedEl.appendChild(picImg), 
-                /**
-					 * Customisation
-					 *
-					 * Deleted line that removed the width Attribute
-					 */
-                picImg.removeAttribute("height");
-            } else picImg && picImg.parentNode.removeChild(picImg);
-        }
-    }, // Run on resize and domready (w.load as a fallback)
-    w.addEventListener ? (w.addEventListener("resize", w.picturefill, !1), w.addEventListener("DOMContentLoaded", function() {
-        w.picturefill(), // Run once only
-        w.removeEventListener("load", w.picturefill, !1);
-    }, !1), w.addEventListener("load", w.picturefill, !1)) : w.attachEvent && w.attachEvent("onload", w.picturefill);
-}(this), /**
+}.call(this), /**
  * Terrific Bootstrap
  */
 function($) {

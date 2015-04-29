@@ -1198,12 +1198,22 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
-.section {
-  padding-bottom: 20px;
+.section,
+.wpcf7-form {
+  margin-bottom: 20px;
 }
-@media (min-width: 33.0625rem) {
-  .section {
-    padding-bottom: 60px;
+@media (min-width: (min-width: 33.0625rem)) {
+  .section,
+  .wpcf7-form {
+    margin-bottom: 60px;
+  }
+}
+.mini-section {
+  margin-bottom: 10px;
+}
+@media (min-width: (min-width: 33.0625rem)) {
+  .mini-section {
+    margin-bottom: 20px;
   }
 }
 /**
@@ -1597,6 +1607,20 @@ video {
   text-decoration: none !important;
   background-color: rgba(102, 102, 102, 0.1);
 }
+.anchor {
+  position: absolute;
+  margin-top: -100px;
+}
+.section-title {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+@media (min-width: (min-width: 33.0625rem)) {
+  .section-title {
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+}
 .richtext {
   /**
 	 * Lists
@@ -1607,9 +1631,6 @@ video {
   /**
 	 * iFrame
 	 * i.e. for YouTube videos
-	 */
-  /*
-	 * Styling for Wordpress specific classes (Frontend and Backend)
 	 */
 }
 .richtext h1,
@@ -1685,32 +1706,46 @@ h4.richtext {
 .richtext iframe {
   max-width: 100%;
 }
-.richtext.mceContentBody {
-  margin: 20px;
+html .mceContentBody {
+  padding: 20px !important;
 }
-.richtext .alignleft {
+.alignleft {
   float: left;
   margin-right: 20px;
 }
-.richtext .alignright {
+.alignright {
   float: right;
   margin-left: 20px;
 }
-.richtext .aligncenter {
+.aligncenter {
   display: block;
   margin: 5px auto;
 }
-.richtext .wp-caption {
+.wp-caption {
   width: auto !important;
 }
-.richtext .wp-caption-text {
+.wp-caption-text {
   font-size: 14px;
   line-height: 24.5px;
   margin-bottom: 20px;
 }
-.richtext .mceTemp + ul,
-.richtext .mceTemp + ol {
+.mceTemp + ul,
+.mceTemp + ol {
   list-style-position: inside;
+}
+span.wpcf7-not-valid-tip {
+  color: #e78f89;
+}
+.wpcf7-validation-errors {
+  display: none;
+}
+div.wpcf7-mail-sent-ok {
+  color: #34ab26;
+  border: none;
+  margin-top: 40px;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 5px 10px;
 }
 .mod-example .debug-grid {
   margin-bottom: 20px;

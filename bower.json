@@ -17,7 +17,6 @@
     "terrificjs": "latest",
     "terrificjs-extensions": "https://github.com/MarcDiethelm/terrificjs-extensions.git",
     "picturefill": "latest",
-    "modernizr": "latest",
-    "picturefill": "git@github.com:dmodalek/picturefill.git"
+    "modernizr": "latest"
   }
 }
