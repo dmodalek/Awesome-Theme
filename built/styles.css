@@ -982,6 +982,9 @@ th {
 /**
  * Fonts Families
  */
+/**
+ * Font-sizes
+ */
 /*
  * Definitions
  *
@@ -994,119 +997,90 @@ th {
  */
 .giga {
   font-size: 4rem;
-  line-height: 5rem;
+  line-height: 7rem;
 }
-@media (min-width: 33.0625rem) {
+@media (min-width: (min-width: 33.0625rem)) {
   .giga {
-    font-size: 4.2rem;
-    line-height: 5.2rem;
+    font-size: 5rem;
+    line-height: 8.75rem;
   }
 }
-.mega,
-blockquote:before {
-  font-size: 3rem;
-  line-height: 4rem;
+.mega {
+  font-size: 60px;
+  line-height: 105px;
 }
-@media (min-width: 33.0625rem) {
-  .mega,
-  blockquote:before {
-    font-size: 3.2rem;
-    line-height: 4.2rem;
+@media (min-width: (min-width: 33.0625rem)) {
+  .mega {
+    font-size: 4rem;
+    line-height: 7rem;
   }
 }
 h1,
 .h1 {
-  font-size: 2rem;
-  line-height: 3rem;
+  font-size: 48px;
+  line-height: 84px;
   font-weight: normal;
 }
-@media (min-width: 33.0625rem) {
+@media (min-width: (min-width: 33.0625rem)) {
   h1,
   .h1 {
-    font-size: 2.2rem;
-    line-height: 3.2rem;
+    font-size: 60px;
+    line-height: 105px;
   }
 }
 h2,
 .h2,
 .skin-main-nav-toggle {
-  font-size: 1.6rem;
-  line-height: 2.6rem;
-  font-weight: normal;
+  font-size: 32px;
+  line-height: 56px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
-@media (min-width: 33.0625rem) {
+@media (min-width: (min-width: 33.0625rem)) {
   h2,
   .h2,
   .skin-main-nav-toggle {
-    font-size: 1.8rem;
-    line-height: 2.8rem;
+    font-size: 48px;
+    line-height: 84px;
   }
 }
 h3,
 .h3 {
-  font-size: 1.4rem;
-  line-height: 2.4rem;
+  font-size: 18px;
+  line-height: 31.5px;
   font-weight: normal;
 }
-@media (min-width: 33.0625rem) {
+@media (min-width: (min-width: 33.0625rem)) {
   h3,
   .h3 {
-    font-size: 1.6rem;
-    line-height: 2.6rem;
+    font-size: 32px;
+    line-height: 56px;
   }
 }
 h4,
 .h4 {
-  font-size: 1.2rem;
-  line-height: 2.2rem;
+  font-size: 18px;
+  line-height: 31.5px;
   font-weight: normal;
-}
-@media (min-width: 33.0625rem) {
-  h4,
-  .h4 {
-    font-size: 1.4rem;
-    line-height: 2.4rem;
-  }
 }
 .copy,
 body {
-  font-size: 1rem;
-  line-height: 1.8rem;
-}
-@media (min-width: 33.0625rem) {
-  .copy,
-  body {
-    font-size: 1rem;
-    line-height: 1.8rem;
-  }
+  font-size: 16px;
+  line-height: 28px;
 }
 .small,
 .layout-dev .badge,
 .layout-dev .viewport-info {
-  font-size: 0.8rem;
-  line-height: 1rem;
-}
-@media (min-width: 33.0625rem) {
-  .small,
-  .layout-dev .badge,
-  .layout-dev .viewport-info {
-    font-size: 1rem;
-    line-height: 1.2rem;
-  }
+  font-size: 14px;
+  line-height: 24.5px;
 }
 .micro {
-  font-size: 0.6rem;
-  line-height: 0.8rem;
-}
-@media (min-width: 33.0625rem) {
-  .micro {
-    font-size: 0.8rem;
-    line-height: 1rem;
-  }
+  font-size: 10px;
+  line-height: 17.5px;
 }
 /*
- * Selected Text Styling
- */
+  * Selected Text Styling
+  */
 ::-moz-selection {
   background: rgba(102, 102, 102, 0.2);
 }
@@ -1364,21 +1338,21 @@ body {
   border: 1px solid grey;
 }
 .layout-dev .viewport-info:after {
-  content: ' Mobile';
+  content: ' Small';
 }
 @media (min-width: 33.0625rem) {
   .layout-dev .viewport-info:after {
-    content: ' Tablet';
+    content: ' Medium';
   }
 }
 @media (min-width: 64.0625rem) {
   .layout-dev .viewport-info:after {
-    content: ' Desktop';
+    content: ' Large';
   }
 }
 .layout-dev .terrific-module {
-  font-size: 0.8rem;
-  line-height: 1rem;
+  font-size: 14px;
+  line-height: 24.5px;
   position: absolute;
   display: block;
   pointer-events: none;
@@ -1387,12 +1361,6 @@ body {
   word-break: break-all;
   background-color: rgba(255, 165, 0, 0.6);
   z-index: 9999;
-}
-@media (min-width: 33.0625rem) {
-  .layout-dev .terrific-module {
-    font-size: 1rem;
-    line-height: 1.2rem;
-  }
 }
 /**
  * Icon Moon
@@ -1496,16 +1464,22 @@ pre:after {
  * Blockquote
  */
 blockquote {
-  border-left: 5px solid #dddddd;
-  margin-left: 0;
-  margin-bottom: 20px;
-  padding-left: 20px;
+  margin: 20px;
+}
+blockquote:before,
+blockquote:after {
+  display: inline-block;
+  color: #dddddd;
+  font-size: 4rem;
+  line-height: 5.6px;
 }
 blockquote:before {
-  color: #dddddd;
-  content: '”';
+  content: '„';
   margin-right: 10px;
-  vertical-align: -0.5em;
+}
+blockquote:after {
+  content: '“';
+  margin-left: 10px;
 }
 blockquote p {
   display: inline;
@@ -1535,14 +1509,8 @@ a:hover {
  * Small
  */
 small {
-  font-size: 0.8rem;
-  line-height: 1rem;
-}
-@media (min-width: 33.0625rem) {
-  small {
-    font-size: 1rem;
-    line-height: 1.2rem;
-  }
+  font-size: 14px;
+  line-height: 24.5px;
 }
 /*
  * Lists
@@ -1717,8 +1685,8 @@ h4.richtext {
 .richtext iframe {
   max-width: 100%;
 }
-.richtext html .mceContentBody {
-  padding: 20px !important;
+.richtext.mceContentBody {
+  margin: 20px;
 }
 .richtext .alignleft {
   float: left;
@@ -1736,15 +1704,9 @@ h4.richtext {
   width: auto !important;
 }
 .richtext .wp-caption-text {
-  font-size: 0.8rem;
-  line-height: 1rem;
+  font-size: 14px;
+  line-height: 24.5px;
   margin-bottom: 20px;
-}
-@media (min-width: 33.0625rem) {
-  .richtext .wp-caption-text {
-    font-size: 1rem;
-    line-height: 1.2rem;
-  }
 }
 .richtext .mceTemp + ul,
 .richtext .mceTemp + ol {
@@ -1974,15 +1936,9 @@ h4.richtext {
   clear: both;
 }
 .skin-main-nav-items .nav-list-l1 a {
-  font-size: 1.2rem;
-  line-height: 2.2rem;
+  font-size: 18px;
+  line-height: 31.5px;
   font-weight: normal;
-}
-@media (min-width: 33.0625rem) {
-  .skin-main-nav-items .nav-list-l1 a {
-    font-size: 1.4rem;
-    line-height: 2.4rem;
-  }
 }
 @media (min-width: 52.0625rem) {
   .skin-main-nav-items .nav-list-l1 {
