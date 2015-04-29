@@ -50,24 +50,32 @@ pre {
  * Blockquote
  */
 
-blockquote {
-	border-left: @spacing / 4 solid @c-grey-medium;
-	margin-left: 0;
-	margin-bottom: @spacing;
-	padding-left: @spacing;
-}
+ blockquote {
+ 	margin: @spacing;
+ }
 
-blockquote:before {
-	&:extend(.mega all);
-	color: @c-grey-medium;
-	content: '”';
-	margin-right: @spacing/2;
-	vertical-align: -0.5em;
-}
+ blockquote:before,
+ blockquote:after {
+ 	display: inline-block;
+ 	color: @c-border;
+ 	font-size: @mega-size;
+ 	line-height: @base-line-height / @giga-size;
+ 	// vertical-align: -0.5em;
+ }
 
-blockquote p {
-	display: inline;
-}
+ blockquote:before {
+ 	content: '„';
+ 	margin-right: @spacing/2;
+ }
+
+ blockquote:after {
+ 	content: '“';
+ 	margin-left: @spacing/2;
+ }
+
+ blockquote p {
+ 	display: inline;
+ }
 
 
 /*
