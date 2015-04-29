@@ -22,30 +22,34 @@ $ bower install
 ```
 
 
+## Rename
+
+* Search & replace all occurences of "awesome-textdomain", "awesome-theme" and "Awesome Theme"
+
+* Replace the Theme Screenshot
+
+* Rename the Theme Folder
+
+```
+$ mv awesome-theme my-theme
+```
+
+
 ## Run
 
 Build with Grunt
- 
+
 ```
   $ grunt
 ```
 
 Build minified assets with the min option
- 
+
 ```
   $ grunt min
 ```
 
 
-## Whats next
-
-* Search & replace all occurences of "awesome-textdomain" and "awesome-theme"
-
-* Rename the Theme Folder 
-
-```
-$ mv awesome-theme my-theme
-```
 
 
 ## Documentation
@@ -55,7 +59,7 @@ $ mv awesome-theme my-theme
 **Responsive and high-res images for Wordpress**
 
 - A modified version of Picturefill v1 is used. For more Infos see bower.json
-- Version 1.x instead of 2.x is used. Version 2.x is still in Beta, 
+- Version 1.x instead of 2.x is used. Version 2.x is still in Beta,
 and high-res images do not work across mayor browsers. For no-js degradation, Picturefill 2.x only shows ALT text, where 1.x shows an image fallback
 
 Configure: Define image sizes and media queries in inc/wp-theme.php. The filter in inc/wp-hooks.php does the rest.
@@ -73,7 +77,7 @@ tbd
 
 tbd
 
- 
+
 ### Development
 
 **Various Developer Tools for debugging and building your assets**
@@ -88,4 +92,4 @@ tbd
 
 ### Deploy
 
-Run _grunt min_ to generate minified assets. Then commit everything and merge it into your _production_ branch. 
+Run _grunt min_ to generate minified assets. Then commit everything and merge it into your _production_ branch.
